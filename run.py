@@ -57,6 +57,10 @@ def division(num1, num2, num3=None):
         resultado = num1 / num2 / num3
         return f'<center><h1>{num1} / {num2} / {num3} = {resultado}</h1></center>'
 
+@app.routr('potencia/<int:num1>,<int:num2>')
+def potencia(num1,num2):
+    resultado = num1 ** num2
+    return f'<center><h1>{num1} ** {num2} = {resultado}</h1></center>'
 
 if __name__ == "__main__":
     app.run()
