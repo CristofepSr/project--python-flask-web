@@ -18,7 +18,7 @@ def user(name = None, edad = None):
 
 # Calculadora
 
-
+# suma
 @app.route('/suma/<int:num1>,<int:num2>')
 @app.route('/suma/<int:num1>,<int:num2>,<int:num3>')
 def suma(num1, num2, num3=None):
@@ -29,6 +29,7 @@ def suma(num1, num2, num3=None):
         resultado = num1 + num2 + num3
         return f'<center><h1>{num1} + {num2} + {num3} = {resultado}</h1></center>'
 
+# resta
 @app.route('/resta/<int:num1>,<int:num2>')
 @app.route('/resta/<int:num1>,<int:num2>,<int:num3>')
 def resta(num1, num2, num3=None):
@@ -38,7 +39,8 @@ def resta(num1, num2, num3=None):
     else:
         resultado = num1 - num2 - num3
         return f'<center><h1>{num1} - {num2} - {num3} = {resultado}</h1></center>'
-    
+
+# multiplicacion
 @app.route('/multiplicacion/<int:num1>,<int:num2>')
 @app.route('/multiplicacion/<int:num1>,<int:num2>,<int:num3>')
 def multiplicacion(num1, num2, num3=None):
@@ -49,6 +51,7 @@ def multiplicacion(num1, num2, num3=None):
         resultado = num1 * num2 * num3
         return f'<center><h1>{num1} * {num2} * {num3} = {resultado}</h1></center>'
 
+# division
 @app.route('/division/<int:num1>,<int:num2>')
 @app.route('/division/<int:num1>,<int:num2>,<int:num3>')
 def division(num1, num2, num3=None):
@@ -59,6 +62,7 @@ def division(num1, num2, num3=None):
         resultado = num1 / num2 / num3
         return f'<center><h1>{num1} / {num2} / {num3} = {resultado}</h1></center>'
 
+# potencia
 @app.routr('potencia/<int:num1>,<int:num2>')
 def potencia(num1,num2):
     resultado = num1 ** num2
