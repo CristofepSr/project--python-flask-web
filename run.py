@@ -1,5 +1,4 @@
 from flask import Flask
-
 app = Flask('__name__')
 
 # Home
@@ -46,10 +45,10 @@ def resta(num1, num2, num3=None):
 def multiplicacion(num1, num2, num3=None):
     if num3 is None:
         resultado = num1 * num2
-        return f'<center><h1>{num1} * {num2} = {resultado}</h1></center>'
+        return f'<center><h1>{num1} x {num2} = {resultado}</h1></center>'
     else:
         resultado = num1 * num2 * num3
-        return f'<center><h1>{num1} * {num2} * {num3} = {resultado}</h1></center>'
+        return f'<center><h1>{num1} x {num2} x {num3} = {resultado}</h1></center>'
 
 # division
 @app.route('/division/<int:num1>,<int:num2>')
@@ -57,16 +56,16 @@ def multiplicacion(num1, num2, num3=None):
 def division(num1, num2, num3=None):
     if num3 is None:
         resultado = num1 / num2
-        return f'<center><h1>{num1} / {num2} = {resultado}</h1></center>'
+        return f'<center><h1>{num1} ÷ {num2} = {resultado}</h1></center>'
     else:
         resultado = num1 / num2 / num3
-        return f'<center><h1>{num1} / {num2} / {num3} = {resultado}</h1></center>'
+        return f'<center><h1>{num1} ÷ {num2} ÷ {num3} = {resultado}</h1></center>'
 
 # potencia
-@app.routr('potencia/<int:num1>,<int:num2>')
+@app.route('/potencia/<int:num1>,<int:num2>')
 def potencia(num1,num2):
     resultado = num1 ** num2
-    return f'<center><h1>{num1} ** {num2} = {resultado}</h1></center>'
+    return f'<center><h1>{num1} ^ {num2} = {resultado}</h1></center>'
 
 if __name__ == "__main__":
     app.run()
